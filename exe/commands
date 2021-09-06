@@ -42,7 +42,7 @@ if file
     end
 
     puts
-    puts "Enter a number or alias followed by optionnal args, nothing to exit"
+    puts "Enter a number or alias followed by optional args, nothing to exit"
     puts
 
     prompt = "> "
