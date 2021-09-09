@@ -1,7 +1,7 @@
 require_relative 'lib/commands/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "commands"
+  spec.name          = "al-commands"
   spec.version       = Commands::VERSION
   spec.authors       = ["Arnaud Lécuyer"]
   spec.email         = ["alsquire@gmail.com"]
