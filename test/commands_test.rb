@@ -29,4 +29,18 @@ class CommandsTest < Minitest::Test
 
     assert_match "Enter a number or alias followed by optional args, nothing to exit", out
   end
+
+  def test_it_launches_first_command_with_number_input
+    FileUtils.cp './test/commands.sample.yml', 'commands.yml'
+
+    Readline.expects(:readline).returns('1')
+    out, _ = capture_subprocess_io do
+      load './exe/commands'
+    end
+
+    assert_match "=> echo Hello world", out
+    # TODO: find a smart way to test execution of command
+    #  - echo abc.revert => assert_match "cba" ?
+    #  - echo something >> file.txt => assert_match "something", File.read('file.txt') ?
+  end
 end
