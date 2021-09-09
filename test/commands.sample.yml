@@ -1,0 +1,4 @@
+-
+  desc: "Hello world"
+  command: "Hello world"
+  alias: "hello"

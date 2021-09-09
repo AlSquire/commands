@@ -1,0 +1,23 @@
+PATH
+  remote: .
+  specs:
+    al-commands (0.1.0)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    minitest (5.14.4)
+    mocha (1.13.0)
+    rake (12.3.3)
+
+PLATFORMS
+  arm64-darwin-20
+
+DEPENDENCIES
+  al-commands!
+  minitest (~> 5.0)
+  mocha
+  rake (~> 12.0)
+
+BUNDLED WITH
+   2.2.22
