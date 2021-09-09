@@ -5,7 +5,11 @@ class CommandsTest < Minitest::Test
     refute_nil ::Commands::VERSION
   end
 
-  def test_it_does_something_useful
-    assert false
+  def test_it_output_helps_when_no_commands_yml
+    out, err = capture_io do
+      load './exe/commands'
+    end
+
+    assert_match /Example of commands.yml/, out
   end
 end
