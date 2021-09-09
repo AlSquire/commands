@@ -12,7 +12,7 @@ class CommandsTest < Minitest::Test
   end
 
   def test_it_output_helps_when_no_commands_yml
-    out, err = capture_io do
+    out, _ = capture_subprocess_io do
       load './exe/commands'
     end
 
@@ -23,7 +23,7 @@ class CommandsTest < Minitest::Test
     FileUtils.cp './test/commands.sample.yml', 'commands.yml'
 
     Readline.expects(:readline).returns('')
-    out, err = capture_io do
+    out, _ = capture_subprocess_io do
       load './exe/commands'
     end
 
