@@ -1,7 +1,5 @@
 #!/usr/bin/env ruby
 
-# Put this file in your PATH and give it execution rights, run to have a commands.yml example.
-# Alias it and/or remove .rb extension for convenience.
 # Usage:
 #   commands.rb [ALIAS_OR_NUMBER [ARGS]] 
 
