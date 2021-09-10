@@ -1,28 +1,59 @@
 # Commands
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/commands`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Have a simple cheatsheet AND a quick launch by project.
+Installing this gem adds a `commands` executable displaying a menu of commands defined in `./commands.yml` in the current directory.
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'commands'
-```
-
-And then execute:
-
-    $ bundle install
-
-Or install it yourself as:
-
-    $ gem install commands
+    $ gem install al-commands
 
 ## Usage
 
-TODO: Write usage instructions here
+Create a `commands.yml` file in a directory, example:
+
+```yaml
+-
+  desc: "Rails server"
+  command: "bundle exec rails server"
+  alias: "rs"
+-
+  desc: "Webpack dev server"
+  command: "./bin/webpack-dev-server"
+  alias: "ws"
+-
+  desc: "Some reversed ordered arguments"
+  command: "echo %{arg3} %{arg2} %{arg1}"
+```
+
+Then typing...
+
+    $ commands
+
+...will display a menu with a prompt:
+
+```
+1/ Rails server
+=> bundle exec rails server
+- alias: rs
+
+2/ Webpack dev server
+=> ./bin/webpack-dev-server
+- alias: ws
+
+3/ Some reversed ordered arguments
+=> echo %{arg3} %{arg2} %{arg1}
+
+Enter a number or alias followed by optional args, nothing to exit
+
+> 
+```
+
+Launch command by entering its number or alias, followed by args.
+
+You can also launch directly without displaying menu:
+
+    $ commands 2
+    # => ./bin/webpack-dev-server 
 
 ## Development
 
@@ -32,5 +63,5 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/commands.
+Bug reports and pull requests are welcome on GitHub at https://github.com/AlSquire/commands.
 
